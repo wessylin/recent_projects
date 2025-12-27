@@ -1,3 +1,4 @@
+# Contract Service Agreement Solution
 A contract UI in React that dynamically builds Service Agreements by parsing data from an input.json file. <br>
 
 - **Tools**: React, Vite
