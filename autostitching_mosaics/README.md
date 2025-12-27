@@ -1,4 +1,4 @@
-#[Auto]Stitching Photo Mosaics
+# [Auto]Stitching Photo Mosaics
 
 To create a system for automatically stitching images into a mosaic.
 
