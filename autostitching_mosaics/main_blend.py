@@ -64,13 +64,6 @@ def compute_union_canvas(src: np.ndarray, ref: np.ndarray, H_src_to_ref: np.ndar
     return (H_u, W_u), (off_x, off_y)
 
 # ------------------------------ Warp to union canvas ------------------------------
-def _inverse_map_to_source(H_inv: np.ndarray, X: np.ndarray, Y: np.ndarray):
-    """Like _inverse_map_to_source but takes coordinate grids X,Y directly."""
-    P = np.stack([X, Y, np.ones_like(X)], axis=-1).reshape(-1, 3).T  # (3,N)
-    Q = H_inv @ P
-    x_s = (Q[0] / Q[2]).reshape(X.shape)
-    y_s = (Q[1] / Q[2]).reshape(Y.shape)
-    return x_s, y_s
 def warp_source_to_union(src: np.ndarray, H_src_to_ref: np.ndarray,
                          union_shape: tuple[int,int], ref_offset: tuple[int,int]) -> tuple[np.ndarray, np.ndarray]:
     """
