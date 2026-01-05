@@ -8,13 +8,9 @@ from skimage.color import rgb2gray, rgba2rgb
 def get_harris_corners(im, edge_discard=20, sigma=1.5, min_distance=1, threshold_rel=0.01):
     """
     This function takes a b&w image and an optional amount to discard
-    on the edge (default is 5 pixels), and finds all harris corners
-    in the image. Harris corners near the edge are discarded and the
-    coordinates of the remaining corners are returned. A 2d array (h)
-    containing the h value of every pixel is also returned.
+    on the edge, and finds all harris corner in the image. 
 
     h is the same shape as the original image, im.
-    coords is 2 x n (ys, xs).
     """
     assert edge_discard >= 20, "Use at least 20px per the assignment."
 
@@ -45,16 +41,6 @@ def get_harris_corners(im, edge_discard=20, sigma=1.5, min_distance=1, threshold
 def dist2(x, c):
     """
     dist2  Calculates squared distance between two sets of points.
-
-    Description
-    D = DIST2(X, C) takes two matrices of vectors and calculates the
-    squared Euclidean distance between them.  Both matrices must be of
-    the same column dimension.  If X has M rows and N columns, and C has
-    L rows and N columns, then the result has M rows and L columns.  The
-    I, Jth entry is the  squared distance from the Ith row of X to the
-    Jth row of C.
-
-    Adapted from code by Christopher M Bishop and Ian T Nabney.
     """
     ndata, dimx = x.shape
     ncenters, dimc = c.shape
